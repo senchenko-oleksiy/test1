@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+
+    <script>{
+        /*if (location.hash.includes('article')) {
+            const idStartPosition = location.hash.lastIndexOf('/');
+            const guid = location.hash.slice(idStartPosition + 1);
+        }*/
+        fetch(`https://insync.alfabank.com.ua/mob/public/article/d1618c57-dee8-4db8-a89f-b569418e19df`)
+            .then(response => response.json())
+            .then(res => {
+                console.log(res);
+                document.title = `Sense. Now - ${res.payload.articleTitle}`;
+                /*data = data
+                    .replace(/{{TITLE}}/g, `Sense. Now - ${res.payload.articleTitle}`)
+                    .replace(/{{IMG}}/g, res.payload.mainPicUrl)
+                    .replace(/{{URL}}/g, "https://insync.alfabank.com.ua/mob/public/article/d1618c57-dee8-4db8-a89f-b569418e19df")
+                    .replace(/{{DOMAIN}}/g, "https://alfabank.ua/");*/
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }</script>
+</head>
+<body>
+    <div id="root" data-required="true"></div>
+</body>
+</html>
